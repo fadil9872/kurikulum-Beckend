@@ -1,7 +1,7 @@
 1. Pertama tama nyalakan laptop/komputer kalian 
 2. Set data1 = microsoft office
 3. Set data2 = 'microsoft office word
-4. Set new folder=
+4. Set new folder = new folder
 5. Pencarian Data 1
 6. JIKA data1 = 0
     MAKA Install data1
