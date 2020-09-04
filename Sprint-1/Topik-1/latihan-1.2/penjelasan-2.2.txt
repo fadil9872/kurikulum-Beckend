@@ -1,0 +1,5 @@
+mengapa perintah which php menghasilkan output /usr/bin/php
+which php = menunjukan lokasi dari program yang dicari
+misal which html maka, yang akan muncul adalah diriktori yang di cari
+/usr/bin/html
+ 
