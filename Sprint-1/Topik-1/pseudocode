@@ -1,0 +1,22 @@
+SET data 1 = Bahan bahan
+SET data 2 = Air Mendidih
+SET data 3 = Bumbu/Pelengkap
+Siapkan data 1
+JIKA
+	data 1 ="12345"
+	MAKA = siapkan data 2
+LAINNYA
+	data 1 = ""
+	MAKA = Pergi Belanja
+AKHIRI JIKA
+KETIKA 
+	data 2 ="v"
+	MAKA = MASUKAN data 1
+AKHIRI-KETIKA
+PROSES
+	data 1 + data 2 =v
+	siapkan data 3
+AKHIRI-PROSES
+Siap di santap
+
+	
