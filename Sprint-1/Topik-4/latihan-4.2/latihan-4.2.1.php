@@ -53,7 +53,7 @@ function sort_name($arr){
 function sort_division($arr){
     foreach ($arr as $key => $value) {
         if ($arr[$key]['division']=='PHP Backend' ) {
-            print_r($arr);
+            print_r($arr[$key]);
         }
     }
 }
@@ -86,7 +86,7 @@ echo "2. Urutkan Berdasarkan Nama\n";
 echo "3. Santri Yang Minat Dengan PHP-Backend\n";
 echo "4. Santri Berusia Kurang Dari 25\n";
 echo "5. Rata-Rata Usia Santri\n";
-echo "6. Urutkan Berdasarkan Usia";
+echo "6. Urutkan Berdasarkan Usia\n";
 echo "Pilih Sesuai Nomer : ";
 $pilih=trim(fgets(STDIN));
 switch ($pilih) {
