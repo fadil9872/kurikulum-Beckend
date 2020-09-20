@@ -1,22 +1,22 @@
 <?php
 class Penjumlahan{
 
-    public static function luas_persegi($p,$l){
+    public static function luas_persegi($p, $l){
         return ($p*$l);
     }
-    public static function keliling_persegi($p,$l){
+    public static function keliling_persegi($p, $l){
         return ($p+$l)*2;
     }
-    public static function luas_segitiga($a,$t){
+    public static function luas_segitiga($a, $t){
         return ($a*$t)/2;
     }
-    public static function keliling_segitiga($s,$s2,$s3) {
+    public static function keliling_segitiga($s, $s2, $s3) {
         return ($s+$s2+$s3);
     }
-    public static function luas_trapesium($a,$b,$t) {
+    public static function luas_trapesium($a, $b, $t) {
         return ($a+$b)*$t/2;
     }
-    public static function keliling_trapesium($s,$s2,$s3,$s4) {
+    public static function keliling_trapesium($s, $s2, $s3, $s4) {
         return ($s+$s2+$s3+$s4);
     }
     public static function luas_lingkaran($r){
@@ -86,7 +86,7 @@ switch ($pilih) {
         $sisi2 = trim(fgets(STDIN));
         echo "Sisi 3 : ";
         $sisi3 = trim(fgets(STDIN));
-        echo "kelilingnya : ".Penjumlahan::keliling_segitiga($sisi,$sisi2,$sisi3)."\n";
+        echo "kelilingnya : ".Penjumlahan::keliling_segitiga($sisi, $sisi2, $sisi3)."\n";
         break;
     case 5:
         echo "===================================\n";
@@ -98,7 +98,7 @@ switch ($pilih) {
         $sisi_bawah=trim(fgets(STDIN));
         echo "Tinggi : ";
         $tinggi=trim(fgets(STDIN));
-        echo "luasnya : ".Penjumlahan::luas_trapesium($sisi_atas,$sisi_bawah,$tinggi)."\n";
+        echo "luasnya : ".Penjumlahan::luas_trapesium($sisi_atas, $sisi_bawah, $tinggi)."\n";
         
         break;
     case 6:
@@ -113,7 +113,7 @@ switch ($pilih) {
         $sisi3 = trim(fgets(STDIN));
         echo "Sisi 4 : ";
         $sisi4 = trim(fgets(STDIN));
-        echo "kelilingnya : ".Penjumlahan::keliling_trapesium($sisi,$sisi2,$sisi3,$sisi4)."\n";
+        echo "kelilingnya : ".Penjumlahan::keliling_trapesium($sisi, $sisi2, $sisi3, $sisi4)."\n";
         break;
     case 7:
         echo "===================================\n";
@@ -121,7 +121,7 @@ switch ($pilih) {
         echo "===================================\n";
         echo "r : ";
         $jari=trim(fgets(STDIN));
-        echo "luasnya : ".luas_lingkaran($jari);
+        echo "luasnya : ".Penjumlahan::luas_lingkaran($jari);
         echo "\n";
         break;
     case 8:
@@ -130,7 +130,7 @@ switch ($pilih) {
         echo "===================================\n";
         echo "Jari-Jari : ";
         $keliling=trim(fgets(STDIN));
-        echo "kelilingnya : \n".Penjumlahan::keliling_lingkaran($keliling);
+        echo "kelilingnya : ".Penjumlahan::keliling_lingkaran($keliling);
         echo "\n";
         break;
     default:

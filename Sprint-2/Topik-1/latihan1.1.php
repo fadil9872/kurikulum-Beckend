@@ -39,8 +39,8 @@ class Pendataan{
 
     public function tambahMember(){
         $i=count($this->member);
-        echo "Input User Id =";
-        $this->member[$i]['UserId']=trim(fgets(STDIN));
+        echo "Input User ID =";
+        $this->member[$i]['UserID']=trim(fgets(STDIN));
         echo "Nama member   =";
         $this->member[$i]['Nama']=trim(fgets(STDIN));
         print_r ($this->member);
@@ -118,7 +118,6 @@ switch ($pilih) {
         echo "Pilihan Tidak Tersedia";
         break;
 }
-echo "Apa Ada Yang Diperlukan Lagi"
 
 
 

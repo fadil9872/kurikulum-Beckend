@@ -12,15 +12,15 @@ class Penjumlahan{
         if ($p==0||$l==0) {
             throw new Exception("Bilangan Tidak Boleh '0' ");
 
+        }
         return ($p+$l)*2;
-            }
     }
     public static function luas_segitiga($a,$t){
         if ($a==0||$t==0) {
             throw new Exception("Bilangan Tidak Boleh '0' ");
 
-        return ($a*$t)/2;
         }
+        return ($a*$t)/2;
     }
     public static function keliling_segitiga($s,$s2,$s3){
         if ($s==0||$s2==0||$s3==0) {
@@ -33,29 +33,29 @@ class Penjumlahan{
         if ($a==0||$b==0||$t==0) {
             throw new Exception("Bilangan Tidak Boleh '0' ");
 
-        return ($a+$b)*$t/2;
         }
+        return ($a+$b)*$t/2;
     }
     public static function keliling_trapesium($s,$s2,$s3,$s4) {
         if ($s==0||$s2==0||$s3==0||$s4==0) {
             throw new Exception("Bilangan Tidak Boleh '0' ");
 
-        return ($s+$s2+$s3+$s4);
         }
+        return ($s+$s2+$s3+$s4);
     }
     public static function luas_lingkaran($r){
         if ($r==0) {
             throw new Exception("Bilangan Tidak Boleh '0' ");
 
-        return 3.14*($r*$r);
         }
+        return 3.14*($r*$r);
     }
     public static function keliling_lingkaran($k){
         if ($k==0) {
             throw new Exception("Bilangan Tidak Boleh '0' ");
 
-        return 2*3.14*($k);
         }
+        return 2*3.14*($k);
     }
 
 }

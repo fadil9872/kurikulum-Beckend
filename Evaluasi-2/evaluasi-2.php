@@ -2,14 +2,17 @@
 class Pendataan{
     public $pendaftaran_santri=[
         [
+            'Id'=> 'Id-001',
             'Nama'=>'Fadil',
             'Jurusan'=>'Mobile'
         ],
         [
+            'Id'=> 'Id-002',
             'Nama'=>'Nasrul',
             'Jurusan'=>'Backend'
         ],
         [
+            'Id'=> 'Id-003',
             'Nama'=>'Haka',
             'Jurusan'=>'Backend'
         ]
@@ -27,8 +30,8 @@ class Pendataan{
         echo "Nama = ";
         $nama=trim(fgets(STDIN));
         foreach ($this->pendaftaran_santri as $key => $value) {
-            if ($value['Nama']==$name) {
-                unset($this->pendaftaran_santri[$key]['Nama']);
+            if ($value['Nama']==$nama) {
+                unset($this->pendaftaran_santri[$key]);
             }
         }
         print_r($this->pendaftaran_santri);
@@ -41,9 +44,9 @@ class Pendataan{
         $jurusan=trim(fgets(STDIN));
 
         foreach ($this->pendaftaran_santri as $key => $value) {
-            if ($value['Nama']==$name) {
-                $this->pendaftaran_santri['Nama']=$nama;
-                $this->pendaftaran_santri['Jurusan']=$jurusan;
+            if ($value['Nama']==$nama) {
+                $this->pendaftaran_santri[$key]['Nama']=$nama;
+                $this->pendaftaran_santri[$key]['Jurusan']=$jurusan;
             }
         }
         print_r($this->pendaftaran_santri);
