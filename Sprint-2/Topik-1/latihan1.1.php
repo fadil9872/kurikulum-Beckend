@@ -62,15 +62,26 @@ class Peminjaman extends Pendataan
         public $daftarKembali=[];
 
         public function peminjamanBUku(){
+            echo "Judul Buku     = ";
+            $judul_buku = trim(fgets(STDIN));
             $i=count($this->Daftar_pinjaman);
-            echo "Nama Member     = ";
-            $this->Daftar_pinjaman[$i]['Name']=trim(fgets(STDIN));
-            echo "Judul Buku      = ";
-            $this->Daftar_pinjaman[$i]['Judul Buku']=trim(fgets(STDIN));
+            foreach ($this->Daftar_pinjaman as $key => $value) {
+                if ($value['Judul Buku']==$judul_buku) {
+                    echo "Judul Buku = ".$value['Judul Buku']."\n";
+                    $this->Daftar_pinjaman[$i]['Isbn']=$value['Isbn'];
+                    $this->Daftar_pinjaman[$i]['Judul Buku']=$value['Judul Buku'];
+                }
+            }
             echo "Tanggal Pinjam  = ";
             $this->Daftar_pinjaman[$i]['Tanggal Pinjam']=trim(fgets(STDIN));
             echo "Pengembalian    =  ";
             $this->Daftar_pinjaman[$i]['Pengembalian']=trim(fgets(STDIN));
+             foreach ($this->data_buku as $key => $value) {
+                 if ($value['Judul Buku']==$judul_buku) {
+                     unset($this->data_buku[$key]);
+                 }
+             }
+            print_r($this->data_buku);
             print_r($this->Daftar_pinjaman);
         }
         public function pengembalianBuku(){
