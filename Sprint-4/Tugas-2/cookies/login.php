@@ -1,6 +1,6 @@
 <?php
-$user_name=$_POST['id_name'];
-$password=$_POST['password'];
+session_start();
+
 $name=$_POST["id_name"];
 $pass=$_POST["password"];
 
@@ -9,12 +9,18 @@ if (isset($_POST["submit"])) {
 
     if ($name=="admin" && $pass==123) {
         setcookie($name,$pass,time()+(3600*3),"/");//3jam
+        $_SESSION['nama']="Mukahamad Fadil";
         header("Location:hal1.php");
         
     }else {
         $eror=true;
     }
+    if (isset($_SESSION['nama'])) {
+        header("Location:hal1.php");
+        exit;
+    }
 }
+
 ?>
 
 
