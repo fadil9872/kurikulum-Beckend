@@ -1,26 +1,25 @@
 <?php
-session_start();
+// session_start();
 
 include "dblogin.php";
 $data=new Data;
 
 if(isset($_POST["submit"])){
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    // $username = ;
+    // $password = ;
     // var_dump($username);        
-    $dt=$data->login($username,$password);
-    var_dump($dt);
-    if ($dt) {
+    $data->login($_POST["username"],$_POST["password"]);
+    // if ($dt) {
             
                    
-        }else {
-            $_SESSION['name']="Mukahamad Fadil";
-            header("Location:index1.php");   
-        }
+        // }else {
+        //     $_SESSION['name']="Mukahamad Fadil";
+        //     header("Location:index1.php");   
+        // }
 
-        if (isset($_SESSION['name'])) {
-            header("Location:index1.php");
-        }
+        // if (isset($_SESSION['name'])) {
+        //     header("Location:index1.php");
+        // }
 
 
 }

@@ -1,18 +1,14 @@
 <?php
-session_start();
 include "dbindex.php";
 $datauser= new Data;
 
 
 
 
-    if (isset($_POST['hapus'])) {
-        $datauser->delete($value['id']);
+    if (isset($_GET['status'])) {
+        $datauser->delete($_GET['id']);
     }
-    if (isset($_POST['update'])) {
-        header("Location:update.php");
-        exit;
-    }
+ 
 
 ?>
 
@@ -68,10 +64,12 @@ $datauser= new Data;
             <th scope="col"> <?= $value['umur'] ?> </th>
             <th scope="col"> <?= $value['jurusan'] ?> </th>
             <th>
-                <form action="" method="post">
-                    <input type="submit" name="hapus" value="hapus">
-                    <input type="submit" name="update" value="update"></>
-                </form>
+                    <a href="index1.php?status=delete&id=<?= $value['id']?>">
+                        <input type="submit" name="hapus" value="hapus">
+                    </a>
+                    <a href="update.php">
+                        <input type="submit" name="update" value="update">
+                    </a>
             
             </th>
 

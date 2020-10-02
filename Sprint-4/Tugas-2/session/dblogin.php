@@ -13,31 +13,40 @@ class Data {
             echo "Connection Failed".$e->getMessage();
         }
     }
-    public function read(){
-        $sql="SELECT user,pass FROM login2;";
-        $stm=$this->conn->prepare($stm);
-        $stm->execute();
 
-        $result=$stm->fetchALL(pdo::FETCH_ASSOC);
-        return $result;
-    }
     public function login($username,$password){
-        $sql="SELECT user,pass FROM login2 where user = '$username'AND pass = '$password' ";
+        $sql="SELECT * FROM loggin where username = '$username' ";
         $stm= $this->conn->prepare($sql);
         $stm->execute();
 
         $result=$stm->fetchALL(pdo::FETCH_ASSOC);
+        
         if (!$result) {
             return [
                 'status'=>'error',
-                'msg'=>'username error'
+                'msg'   =>'username error'
             ];
+            header("Location:sesion.php");
         }
-            return[
-                'status'=>'succes',
-                'msg'=>'Login Berhasil'
-            ];
+        foreach ($result as $key) {
+            
+        }
+        if ($key['pass']==$password) {
+            // return[
+            //     'status'=>'succes',
+            //     'msg'=>'Login Berhasil'
+            // ];
+            header("Location:index1.php");
+        }
+        }
+        
 
+
+    
+    public function register($username,$pass,$alamat,$jurusan){
+        $sql="INSERT INTO loggin(username,pass,alamat,jurusan) VALUES ('$username','$pass','$alamat',$jurusan) ";
+        $stm= $this->conn->prepare($sql);
+        $stm->execute();
     }
 
     
