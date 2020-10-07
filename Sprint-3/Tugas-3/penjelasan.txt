@@ -1,0 +1,3 @@
+one to one = dimana 1 barang punya 1 supplier
+one to many = 1 supplier punya banyak barang
+many to many = 1 supplier bisa menampung banyak barang, dan barang bisa di miliki oleh banyak supplier juga
