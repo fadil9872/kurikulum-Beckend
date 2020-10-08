@@ -8,6 +8,9 @@ $datauser= new Data;
     if (isset($_GET['status'])) {
         $datauser->delete($_GET['id']);
     }
+
+    session_start();
+    echo $_SESSION['nama'];
  
 
 ?>
@@ -25,12 +28,12 @@ $datauser= new Data;
     $datauser->user();
     ?>
     <table>
-    <h3>Halo <?= $_SESSION['name'];?></h3>
+    <h3>Halo <?= $_SESSION['nm_user'];?></h3>
     </table>
     <table>
         <blockquote class="blockquote text-center">
-            <p class="mb-0">Sistem Pendataan Sekolah </p>
-            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            <h2 class="mb-0">Sistem Pendataan Sekolah </h2>
+            <footer class="blockquote-footer">Pondok Pesantren<cite title="Source Title"> Darul Amanah</cite></footer>
         </blockquote>
     </table>
 
@@ -64,13 +67,12 @@ $datauser= new Data;
             <th scope="col"> <?= $value['umur'] ?> </th>
             <th scope="col"> <?= $value['jurusan'] ?> </th>
             <th>
-                    <a href="index1.php?status=delete&id=<?= $value['id']?>">
-                        <input type="submit" name="hapus" value="hapus">
-                    </a>
-                    <a href="update.php">
-                        <input type="submit" name="update" value="update">
-                    </a>
-            
+                <a href="index1.php?status=delete&id=<?= $value['id']?>">
+                    <input type="submit" name="hapus" value="hapus">
+                </a>
+                <a href="update.php">
+                    <input type="submit" name="update" value="update">
+                </a>
             </th>
 
         </tr>

@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
     <form action="" method="post">
-        <label for="user">User      :   </label>
+        <label for="user" ><span style="color:red">User      :   </span></label>
         <input type="text" name="user" id="user ">
         <label for="pass">Password  :   </label>
         <input type="password" name="pass" id="pass">
