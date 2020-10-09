@@ -3,7 +3,7 @@ session_start();
 
 
 if(isset($_SESSION['login'])){
-    header("Location: index1.php");
+    header("Location:index1.php");
     exit;
 }
 $error = false;
@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
         $msg = $login['msg'];
     }else {
         $_SESSION['login'] = true;
-        header ('Location : index1.php');
+        header ('Location:index1.php');
         exit;
     }
 }

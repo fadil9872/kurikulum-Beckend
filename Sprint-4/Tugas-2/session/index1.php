@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "dbindex.php";
 $datauser= new Data;
 
@@ -8,9 +9,10 @@ $datauser= new Data;
     if (isset($_GET['status'])) {
         $datauser->delete($_GET['id']);
     }
-
-    session_start();
-    echo $_SESSION['nama'];
+    if (!isset($_SESSION['login'])) {
+        header("Location:login.php");
+    }
+    // echo $_SESSION['login'];
  
 
 ?>
@@ -70,7 +72,7 @@ $datauser= new Data;
                 <a href="index1.php?status=delete&id=<?= $value['id']?>">
                     <input type="submit" name="hapus" value="hapus">
                 </a>
-                <a href="update.php">
+                <a href="update.php?status=update&id=<?=$value['id']?>">
                     <input type="submit" name="update" value="update">
                 </a>
             </th>

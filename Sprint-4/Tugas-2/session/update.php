@@ -1,5 +1,13 @@
-<?php include "dbindex.php";
+<?php 
+session_start();
+include "dbindex.php";
 $conn= new Data;
+$data = $conn->user();
+if (!isset($_SESSION['login'])) {
+    header("Location:login.php");
+}
+foreach ($data as $key => $value)
+
 ?>
 
 <!DOCTYPE html>
@@ -12,19 +20,17 @@ $conn= new Data;
 <body>
     <h1>Update Data </h1>
     <form action="" method="post">
-        <div class=barang > Id : <br>
-        <input type="text" name="idnama" id="idnama"></div><br>
         <div class=barang > Nama : <br>
-        <input type="text" name="nama" id="nama"></div><br>
+        <input type="text" name="nama" id="nama" value=<?= $value['nama'] ?>></><br>
         <div class=barang> Umur : <br>
-        <input type="text" name="umur" id="umur"></div><br>
+        <input type="text" name="umur" id="umur" value=<?= $value['umur'] ?>></div><br>
         <div class=barang> Jurusan : <br>
-        <input type="text" name="jurusan" id="jurusan"></div><br>
+        <input type="text" name="jurusan" id="jurusan" value=<?= $value['jurusan'] ?>></div><br>
         <input type="submit" name="submit" value="Submit">
     </form>
     <?php
     if(isset($_POST['submit'])){
-        $id = $_POST['idnama'];  
+        $id = $value['id'];  
         $nama = $_POST['nama'];  
         $umur = $_POST['umur'];   
         $jurusan = $_POST['jurusan'];

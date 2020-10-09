@@ -1,5 +1,11 @@
-<?php include "dbindex.php";
+<?php 
+session_start();
+include "dbindex.php";
 $conn= new Data;
+if (!isset($_SESSION['login'])) {
+    header("Location:login.php");
+}
+
 ?>
 
 <!DOCTYPE html>
