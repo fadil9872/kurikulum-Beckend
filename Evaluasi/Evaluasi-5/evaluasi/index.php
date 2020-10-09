@@ -8,19 +8,20 @@
             'password'=>'azka9871'
         ]
     ]);
-    echo $response->getStatusCode(); // 200
-    echo $response->getHeaderLine('content-type'); // 'application/json; charset=utf8'
+    // echo $response->getStatusCode(); // 200
+    // echo $response->getHeaderLine('content-type'); // 'application/json; charset=utf8'
     // echo $response->getBody(); // '{"id": 1420053, "name": "guzzle", ...}'
-    echo "<br>";
+    // echo "<br>";
 
-    $json = '{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYXBpLnBvbmRva3Byb2dyYW1tZXIuY29tXC9hcGlcL3N0dWRlbnRfbG9naW4iLCJpYXQiOjE2MDIyMjc1NjcsImV4cCI6MTYwMjIzMTE2NywibmJmIjoxNjAyMjI3NTY3LCJqdGkiOiI1Mlg3RkxaTGZoZ1VkcEttIiwic3ViIjoxNTcsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.zN8Zln-gDYAYTftG2vbV0PtVdjHxheYcSR05UhrXIjI"}';
+    $json = $response->getBody();
 
     $arr = json_decode($json, true);
     echo $arr["token"];
     $token = $arr["token"];
-    $response = $client->request('POST', 'https://api.pondokprogrammer.com/api/student_login', [
-        'on_headers' => function (ResponseInterface $response) {
-        }
+    $response = $client->request('POST', 'https://api.pondokprogrammer.com/api/class/qr?class_id=85', [
+        'headers' => [
+            'Authorization'=>'bearer' .$token
+        ]
     ]);
     
     
