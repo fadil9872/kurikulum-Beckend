@@ -1,0 +1,17 @@
+{
+    "name": "tugas/fadil",
+    "authors": [
+        {
+            "name": "romi9872",
+            "email": "adian281r@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\":"src/"
+        }
+    }
+}
