@@ -20,7 +20,7 @@
     $token = $arr["token"];
     $response = $client->request('POST', 'https://api.pondokprogrammer.com/api/class/qr?class_id=85', [
         'headers' => [
-            'Authorization'=>'bearer' .$token
+            'Authorization' : bearer . $token
         ]
     ]);
     
