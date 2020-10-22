@@ -19,8 +19,8 @@ class Data {
         $sql="SELECT username FROM loggin where username = '$username'";
         $stm= $this->conn->prepare($sql);
         $stm->execute();
-
-        if($hasil =$stm->fetchAll(PDO::FETCH_ASSOC)){
+        $hasil =$stm->fetchAll(PDO::FETCH_ASSOC)
+        if($hasil){
             echo "<script>
             alert('Login Berhasil');
             Location:'index1.php');
